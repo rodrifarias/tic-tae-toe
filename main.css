@@ -1,0 +1,253 @@
+:root {
+    --color-theme: #4285F4;
+    --color-grid-board: #eee;
+    --color-x: #FBBC05;
+}
+
+* {
+    font-family: "Atma", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+body {
+    height: 100vh;
+}
+
+nav {
+    background-color: var(--color-theme);
+    height: 80px;
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    align-content: center !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+nav a {
+    font-size: 40px !important;
+    color: white !important;
+}
+
+.block-play {
+    height: 160px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+}
+
+.col-score {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content: center;
+    align-items: center;
+}
+
+.bg-winner-O {
+    background-color: var(--color-theme);
+}
+
+.bg-winner-X {
+    background-color: var(--color-x);
+}
+
+.circle {
+    background: var(--color-theme);
+    border-radius: 50%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+}
+
+.circle-sm {
+    width: 40px;
+    height: 40px;
+}
+
+.circle-sm div {
+    background: white;
+    border-radius: 50%;
+    width: 27px;
+    height: 27px;
+}
+
+.circle-lg {
+    width: 80px;
+    height: 80px;
+}
+
+.circle-lg div {
+    background: white;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+}
+
+.x {
+    background-color: var(--color-x);
+    transform: rotate(45deg);
+}
+
+.x-sm {
+    width: 6px;
+    height: 50px;
+}
+
+.x-sm div {
+    width: 6px;
+    height: 50px;
+    background-color: var(--color-x);
+    transform: rotate(90deg);
+}
+
+.x-lg {
+    width: 10px;
+    height: 80px;
+}
+
+.x-lg div {
+    width: 10px;
+    height: 80px;
+    background-color: var(--color-x);
+    transform: rotate(90deg);
+}
+
+.block-play:first-child, .block-play:nth-child(4) {
+    border-bottom: 4px solid var(--color-grid-board);
+    border-right: 4px solid var(--color-grid-board);
+}
+
+.block-play:last-child {
+    border-left: 4px solid var(--color-grid-board);
+}
+
+.block-play:nth-child(2), .block-play:nth-child(5) {
+    border-bottom: 4px solid var(--color-grid-board);
+}
+
+.block-play:nth-child(3), .block-play:nth-child(6) {
+    border-bottom: 4px solid var(--color-grid-board);
+    border-left: 4px solid var(--color-grid-board);
+}
+
+.block-play:nth-child(7) {
+    border-right: 4px solid var(--color-grid-board);
+}
+
+.mr-100 {
+    margin-right: 100px;
+}
+
+.mr-10 {
+    margin-right: 10px;
+}
+
+.mr-30 {
+    margin-right: 30px;
+}
+
+.mt-50 {
+    margin-top: 50px;
+}
+
+.ml-20 {
+    margin-left: 20px;
+}
+
+.score {
+    font-size: 30px;
+}
+
+#btn-restart {
+    width: 180px;
+    background-color: var(--color-theme);
+    color: white;
+}
+
+.c-main {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: space-around;
+    justify-content: center;
+    align-items: center;
+}
+
+#container-blocks {
+    width: 550px;
+}
+
+@media (max-width: 550px) {
+    #container-blocks {
+        width: 400px;
+    }
+}
+
+@keyframes blink {
+    0% { opacity: 0 }
+    49% { opacity: 0 }
+    50% { opacity: 1 }
+}
+
+@keyframes minimizeBoard {
+    0% { transform: scale(1) }
+    10% { transform: scale(.9) }
+    20% { transform: scale(.8) }
+    30% { transform: scale(.8) }
+    40% { transform: scale(.7) }
+    50% { transform: scale(.6) }
+    60% { transform: scale(.5) }
+    70% { transform: scale(.4) }
+    80% { transform: scale(.3) }
+    90% { transform: scale(.2) }
+    95% { transform: scale(.1) }
+    100% { transform: scale(0) }
+}
+
+@keyframes showWinner {
+    0% { transform: scale(0) }
+    10% { transform: scale(.1) }
+    20% { transform: scale(.2) }
+    30% { transform: scale(.3) }
+    40% { transform: scale(.4) }
+    50% { transform: scale(.5) }
+    60% { transform: scale(.6) }
+    70% { transform: scale(.7) }
+    80% { transform: scale(.8) }
+    90% { transform: scale(.9) }
+    95% { transform: scale(.95) }
+    100% { transform: scale(1) }
+}
+
+.minimize-board {
+    animation: minimizeBoard 1s linear;
+}
+
+.show-winner {
+    animation: showWinner 1s linear;
+}
+
+.show-winner .col {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.blink {
+    animation: blink 1s linear infinite;
+}
+
+.hidden {
+    display: none;
+}
